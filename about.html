@@ -1,56 +1,135 @@
 <!doctype html>
-<html>
+<html lang="es">
 <head>
-	<meta charset="utf-8" />
-		<meta name="description" content="Pinturas, Cuadros, Óleos, Acrílicos, Hurdes, Pinofranqueado, Aldehuela, Erías, paisajes hurdanos, Mérida" />
-		<meta name="keywords" content="Pinturas, Cuadros, Óleos, Acrílicos, Hurdes, Pinofranqueado, Aldehuela, Erías, paisajes hurdanos, Mérida" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" />
-		<style type="text/css">
-		.is-preload #wrapper #main .items .item.intro.span-2 p {
-    font-family: Lucida Grande, Lucida Sans Unicode, Lucida Sans, DejaVu Sans, Verdana, sans-serif;
-}
-        .is-preload #wrapper #main .items .item.intro.span-2 h1 {
-    font-family: Lucida Grande, Lucida Sans Unicode, Lucida Sans, DejaVu Sans, Verdana, sans-serif;
-}
-        </style>
-		</noscript>
-<meta charset="utf-8">
-<title>Sobre mí - Preferencias</title>
-<style type="text/css">
-body,td,th {
-    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
-}
-body table tbody tr td p {
-    font-family: Lucida Grande, Lucida Sans Unicode, Lucida Sans, DejaVu Sans, Verdana, sans-serif;
-}
-</style>
-</head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Texto e Imágenes Paralelas Centrado</title>
+	
+  <style>
+    :root{
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --radius: 14px;
+      --maxw: 1100px;
+      --gap: 2rem;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
 
-<body>
-<table width="847" border="0" align="center">
-  <tbody>
-    <tr>
-      <th height="39" bgcolor="#D15658" scope="col"><strong>Sobre mí</strong></th>
-      <th height="39" align="right" scope="col"><a href="index.html">Volver</a></th>
-    </tr>
-    <tr>
-      <td valign="middle"><p align="justify">Soy de Pinofranqueado (Cáceres) y poco a poco me voy aficionando a la pintura. Me llamo Santi y estudié I.T.Telecomunicaciones en la Universidad de Valladolid e Ingeniero en Electrónica en la Universidad de Badajoz. Mis aficiones son la informática, la electrónica, la tecnología y la música española.</p></td>
-      <td width="527" align="center"><img src="images/pino1.jpg" width="527" height="293" alt=""/></td>
-    </tr>
-    <tr>
-      <td><img src="images/pino2.jpg" width="300" height="400" alt=""/></td>
-      <td align="right"><p align="justify">En cuanto a mis preferencias pictóricas me decanto por los paisajes que en su mayoría son de tonalidades frías todo ello influido por un entorno de colorido verdes, azules y ocres en su mayoría hacen de mis composiciones imágenes con fuertes contrastes y viveza, quedándole al expectador una sensación fresca y generándole distintas motivaciones.</p>
-        <p align="justify">Todos los cuadros realizados reflejan realidades del entorno, en muchos casos bien conocidos por mí siendo al primero que en cada cuadro aporto aquellos detalles y colores que siempre han convivido desde mi niñez.</p>
-        <p align="justify">En mis últimas creaciones ha primado el arte abstracto como complemento a las nuevas corrientes modernas de muebles y decoración de las viviendas.</p>
-      <p align="justify">By S@nti.</p></td>
-    </tr>
-  </tbody>
-</table>
-	<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script> 
-			<script src="assets/js/util.js"></script> 
-		    <script src="assets/js/main.js"></script>
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin-top:80px;
+      background:linear-gradient(180deg,var(--bg),#eef2ff);
+      color:#111827;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:3rem 1rem;
+    }
+	  
+
+    .container{
+      width:100%;
+      max-width:var(--maxw);
+      margin:0 auto;
+    }
+
+    header{ text-align:center; margin-bottom:20px; margin-top:50px }
+    header h1{ margin:.2rem 0; font-size:clamp(1.25rem,2.2vw,2rem) }
+    header p{ margin:0; color:var(--muted) }
+
+    /* filas con imagen y texto en paralelo */
+    .row{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:1.25rem;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:var(--gap);
+      align-items:center; /* centra verticalmente la imagen y el texto */
+      box-shadow:0 8px 30px rgba(16,24,40,0.08);
+      margin-bottom:1.5rem;
+    }
+
+    /* estilo de la imagen para que esté centrada dentro de su columna */
+    .row img{
+      display:block;
+      width:100%;
+      height:320px;
+      object-fit:cover;
+      border-radius:10px;
+      margin-left:auto;
+      margin-right:auto;
+      box-shadow:0 6px 20px rgba(16,24,40,0.06);
+    }
+
+    /* contenido de texto centrado horizontal y verticalmente */
+    .text{
+      text-align:center; /* centra el texto horizontalmente */
+      padding:0 0.5rem;
+    }
+    .text h2{ margin:0 0 .5rem 0 }
+    .text p{ color:var(--muted); line-height:1.6 }
+    .text .cta{ display:inline-block; margin-top:1rem; padding:.6rem 1rem; border-radius:10px; text-decoration:none; background:var(--accent); color:white }
+
+    /* variantes: imagen a la derecha */
+    .row.alt{ grid-template-columns: 1fr 1fr; }
+    .row.alt .image-wrap{ order:2 }
+    .row.alt .text{ order:1 }
+
+    /* Responsivo: apilar en pantallas pequeñas */
+    @media (max-width:860px){
+      .row{ grid-template-columns:1fr; padding:1rem }
+      .row img{ height:260px }
+      .text{ padding-top:.5rem }
+    }
+
+  </style>
+	
+</head>
+<body class="is-preload">
+  <div class="container">
+    <header>
+      <h1>Sobre mí</h1>
+      <p>Mis antecedentes e historia.</p>
+		<th height="39" align="right" scope="col"><a href="index.html">Volver</a></th>
+    </header>
+
+    <!-- fila 1: imagen a la izquierda, texto a la derecha -->
+    <section class="row">
+      <div class="image-wrap">
+        <img src="images/pino1.jpg" alt="Vistas de Pinofranqueado" />
+      </div>
+      <div class="text">
+        <h2>Título de sección</h2>
+        <p>Soy de Pinofranqueado (Cáceres) y poco a poco me voy aficionando a la pintura. Me llamo Santi y estudié I.T.Telecomunicaciones en la Universidad de Valladolid e Ingeniero en Electrónica en la Universidad de Badajoz. Mis aficiones son la informática, la electrónica, la tecnología y la música española.</p>
+    
+      </div>
+    </section>
+
+    <!-- fila 2: imagen a la derecha, texto a la izquierda (alternada) -->
+    <section class="row alt">
+      <div class="text">
+        <h2>Sección alterna</h2>
+        <p>En cuanto a mis preferencias pictóricas me decanto por los paisajes que en su mayoría son de tonalidades frías todo ello influido por un entorno de colorido verdes, azules y ocres en su mayoría hacen de mis composiciones imágenes con fuertes contrastes y viveza, quedándole al expectador una sensación fresca y generándole distintas motivaciones.
+Todos los cuadros realizados reflejan realidades del entorno, en muchos casos bien conocidos por mí siendo al primero que en cada cuadro aporto aquellos detalles y colores que siempre han convivido desde mi niñez.
+En mis últimas creaciones ha primado el arte abstracto como complemento a las nuevas corrientes modernas de muebles y decoración de las viviendas.
+By S@nti.</p>
+       
+      </div>
+      <div class="image-wrap">
+        <img src="images/pino2.jpg" alt="Pinofranqueado" />
+      </div>
+    </section>
+
+    
+
+    <footer style="text-align:center;color:var(--muted);font-size:.9rem;padding:1rem 0">By S@nti.</footer>
+  </div>
 </body>
 </html>
+
